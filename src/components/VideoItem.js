@@ -1,0 +1,24 @@
+import React from "react";
+
+import {Grid, Paper, Typography} from "@material-ui/core";
+
+const VideoItem = ({video, onSelect}) => {
+    const handleClick = () => {
+
+        // event.preventDefault();
+
+        onSelect(video);
+
+    }
+    return (
+        <Grid item xs={12}>
+            <Paper style={{display: 'flex', alignItems: 'center', cursor: 'pointer'}} onClick={handleClick}>
+                <img style={{marginRight: '20px'}} src={video.snippet.thumbnails.medium.url} alt="thumbnail"/>
+                <Typography variant="subtitle1"><b>{video.snippet.title}</b></Typography>
+            </Paper>
+        </Grid>
+    );
+}
+
+export default VideoItem;
+
